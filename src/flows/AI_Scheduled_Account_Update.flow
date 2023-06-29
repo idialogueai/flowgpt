@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Run_Batch_GPT_Update</name>
+        <label>Run Batch GPT Update</label>
+        <locationX>939</locationX>
+        <locationY>316</locationY>
+        <actionName>rooms__BatchAction</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>batchDefinitionID</name>
+            <value>
+                <elementReference>Batch_Definition.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__BatchAction</nameSegment>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <decisions>
+        <name>Batch_Definition_Found</name>
+        <label>Batch Definition Found?</label>
+        <locationX>788</locationX>
+        <locationY>317</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>YesBatchDefinitionFound</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Batch_Definition</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Run_Batch_GPT_Update</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Invokes an iDialogue batch that uses GPT to summarize Accounts.</description>
+    <environments>Default</environments>
+    <interviewLabel>AI Scheduled Account Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AI Scheduled Account Update</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>Queries for a batch definition name &quot;Daily Account AI Summary&quot;.
+The batch invokes the AI_Account_Summary flow.</description>
+        <name>Batch_Definition</name>
+        <label>Get Account Summary Batch Definition</label>
+        <locationX>649</locationX>
+        <locationY>315</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Batch_Definition_Found</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Daily Account AI Summary</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>rooms__ScheduledBatch__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>523</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Batch_Definition</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2023-05-01</startDate>
+            <startTime>03:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

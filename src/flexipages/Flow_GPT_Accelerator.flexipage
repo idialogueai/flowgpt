@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;Welcome to the iDialogue AI - FlowGPT Accelerator!&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Learn generative AI and GPT techniques to enrich any Salesforce org.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Record-Triggered Flows&lt;/p&gt;&lt;p&gt;Auto-Triggered Flows&lt;/p&gt;&lt;p&gt;Scheduled Batch Flows&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;/lightning/setup/Flows/home&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Open the Flow Builder&lt;/a&gt; to locate some of the example GPT flows below.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Case AI&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Case summarization&lt;/p&gt;&lt;p&gt;Language translations&lt;/p&gt;&lt;p&gt;Suggested remediation&lt;/p&gt;&lt;p&gt;Case Sentiment analysis.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Account GPT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Daily scheduled Account AI summary batch.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Lead GPT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Lead summary&lt;/p&gt;&lt;p&gt;Suggested Email&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Opportunity GPT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Chat with an interactive model representing an opportunity with products.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;File GPT&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Content Version AI processing.&lt;/p&gt;&lt;p&gt;Text extraction&lt;/p&gt;&lt;p&gt;Optical character recognition&lt;/p&gt;&lt;p&gt;GPT summarization&lt;/p&gt;&lt;p&gt;Document Categorization&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Custom AI Assistants&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Build your own AI bot for any standard or custom record.&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>region1</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Resources&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://docs.i-dialogue.com/#/ai/overview&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;iDialogue AI Overview&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://docs.i-dialogue.com/#/ai/quick_start&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;AI Quick Start&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://docs.i-dialogue.com/#/ai/chat_bots&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Conversational Chat AI&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://docs.i-dialogue.com/#/ai/prompt_engineering&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;Prompt Engineering&lt;/a&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>region2</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>region3</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Flow GPT Accelerator</masterLabel>
+    <template>
+        <name>flexipage:appHomeTemplateTwoColumnsStacked</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>

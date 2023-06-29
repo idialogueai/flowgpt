@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>GPT_Summarize_Account</name>
+        <label>GPT Summarize Account</label>
+        <locationX>802</locationX>
+        <locationY>337</locationY>
+        <actionName>rooms__AICompletionAction</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Success_Outcome</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>systemMessage</name>
+            <value>
+                <elementReference>SystemPrompt</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>userMessage</name>
+            <value>
+                <stringValue>Summarize the customer account.</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AICompletionAction</nameSegment>
+        <outputParameters>
+            <assignToReference>AIResponse</assignToReference>
+            <name>completion</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>ErrorMessage</assignToReference>
+            <name>message</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>Success</assignToReference>
+            <name>success</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <decisions>
+        <name>Requires_AI_Summary</name>
+        <label>Requires AI Summary?</label>
+        <locationX>641</locationX>
+        <locationY>338</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>YesRequiresSummary</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AccountRecord.AI_Summary__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>GPT_Summarize_Account</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Success_Outcome</name>
+        <label>Success?</label>
+        <locationX>910</locationX>
+        <locationY>339</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>YesSuccess</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Success</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Account</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <description>Generates a GPT summary from key Account fields.</description>
+    <environments>Default</environments>
+    <interviewLabel>AI Account Summary {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>AI Account Summary</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>AccountRecord</name>
+        <label>Get Account Record</label>
+        <locationX>649</locationX>
+        <locationY>183</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Requires_AI_Summary</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Account</name>
+        <label>Update Account</label>
+        <locationX>1058</locationX>
+        <locationY>338</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>AI_Summary__c</field>
+            <value>
+                <elementReference>AIResponse</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordUpdates>
+    <start>
+        <locationX>523</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>AccountRecord</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>SystemPrompt</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>You are creating a summary of the following customer account for Senior Business Executives. Responses are professional, accurate, and concise. Where possible, add actionable insights to improve the customer relationship.
+Name = {!AccountRecord.Name}
+Record Created Date = {!AccountRecord.CreatedDate}
+Record Last Modified Date = {!AccountRecord.LastModifiedDate}
+Type = {!AccountRecord.Type}
+Description = {!AccountRecord.Description}
+Industry = {!AccountRecord.Industry}
+Rating = {!AccountRecord.Rating}
+Website = {!AccountRecord.Website}
+Account Number = {!AccountRecord.AccountNumber}
+Account Source = {!AccountRecord.AccountSource}
+Annual Revenue = {!AccountRecord.AnnualRevenue}
+Billing Address = 
+{!AccountRecord.BillingStreet}
+{!AccountRecord.BillingCity} {!AccountRecord.BillingState}
+{!AccountRecord.BillingPostalCode}
+{!AccountRecord.BillingCountry}</text>
+    </textTemplates>
+    <variables>
+        <name>AIResponse</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ErrorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Success</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

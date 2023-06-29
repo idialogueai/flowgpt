@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>AI_Suggest_Email_Response</name>
+        <label>AI Suggest Email Response</label>
+        <locationX>568</locationX>
+        <locationY>401</locationY>
+        <actionName>rooms__AICompletionAction</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>AI_Success</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>maxTokens</name>
+            <value>
+                <numberValue>300.0</numberValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>systemMessage</name>
+            <value>
+                <elementReference>SystemPrompt</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>userMessage</name>
+            <value>
+                <stringValue>Create an introductory email from {!$Record.Owner:User.Name} to {!$Record.FirstName} {!$Record.LastName}.</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AICompletionAction</nameSegment>
+        <outputParameters>
+            <assignToReference>AI_Suggested_Email_Response</assignToReference>
+            <name>completion</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>ErrorMessage</assignToReference>
+            <name>message</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>Success</assignToReference>
+            <name>success</name>
+        </outputParameters>
+        <outputParameters>
+            <assignToReference>TotalTokens</assignToReference>
+            <name>totalTokens</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>57.0</apiVersion>
+    <decisions>
+        <name>AI_Success</name>
+        <label>AI Success?</label>
+        <locationX>697</locationX>
+        <locationY>403</locationY>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>YesEmailSummarySuccess</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Success</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead_Record</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Lead AI Enrichment {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
+    <label>Lead AI Enrichment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead_Record</name>
+        <label>Update Lead Record</label>
+        <locationX>849</locationX>
+        <locationY>402</locationY>
+        <inputAssignments>
+            <field>AI_Suggested_Email_Response__c</field>
+            <value>
+                <elementReference>AI_Suggested_Email_Response</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>444</locationX>
+        <locationY>48</locationY>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Email</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>AI_Suggest_Email_Response</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>SystemPrompt</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>You are a Generator Sales Representative for GenCorp. Content needs to be created for the following lead:
+# Lead Details
+Salutation = {!$Record.Salutation}
+First Name = {!$Record.FirstName}
+Last Name = {!$Record.LastName}
+Email = {!$Record.Email}
+Title = {!$Record.Title}
+Mobile Phone = {!$Record.MobilePhone}
+Industry = {!$Record.Industry}
+Street = {!$Record.Street}
+City = {!$Record.City}
+State = {!$Record.State}
+Postal Code = {!$Record.PostalCode}
+Country = {!$Record.Country}</text>
+    </textTemplates>
+    <variables>
+        <name>AI_Suggested_Email_Response</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ErrorMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Success</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>TotalTokens</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+    </variables>
+</Flow>
