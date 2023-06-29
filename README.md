@@ -40,4 +40,6 @@ Summarizes accounts using GPT.
 Nightly triggering of a batch that invokes GPT summarization of Accounts.
 
 ## Conversational AI / ChatGPT for Salesforce 
-Add 
+Add an AI Assistant to any page layout to interact with the default AI model.
+
+Extend the AI model with a custom flow that generates a system prompt.
