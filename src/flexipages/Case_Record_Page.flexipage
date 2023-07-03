@@ -704,6 +704,20 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>insightsEnabled</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>AI Assistant</value>
+                </componentInstanceProperties>
+                <componentName>rooms:AIAssistant</componentName>
+                <identifier>rooms_AIAssistant</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>flowArguments</name>
                     <value>[{&quot;label&quot;:&quot;recordId&quot;,&quot;dataType&quot;:&quot;String&quot;,&quot;supportsRecordId&quot;:true,&quot;value&quot;:&quot;{!Record.Id}&quot;}]</value>
                 </componentInstanceProperties>

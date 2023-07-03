@@ -104,13 +104,13 @@
         <inputParameters>
             <name>systemMessage</name>
             <value>
-                <stringValue>You are a customer service and support analyst utilizing the frequently asked questions (FAQ) below to troubleshoot and resolve a support case.</stringValue>
+                <stringValue>{!SystemPrompt}. A list of frequently asked questions (FAQ) are provided below. Responses must be based on the FAQ.</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>userMessage</name>
             <value>
-                <stringValue>Based on the FAQ, provide the best suggested resolution in less than 100 words. Be concise.</stringValue>
+                <stringValue>Based on the case details and FAQ, provide the best suggested resolution in less than 100 words. Be concise.</stringValue>
             </value>
         </inputParameters>
         <nameSegment>rooms__AICompletionAction</nameSegment>
