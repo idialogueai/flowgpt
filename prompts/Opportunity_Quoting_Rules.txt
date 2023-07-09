@@ -42,6 +42,12 @@ Duplicate products should not exist in the quote. If 2 line items have the same 
 # Configuration Rules
 
 
+# Upsell Rules
+
+
+# Cross Sell Rules
+
+
 # Pricing rules
 
 
@@ -51,7 +57,3 @@ Accounts of type “Platinum” receive an additional 5% discount on all product
 
 # Approvals
 Any configuration that falls outside the rules defined above will require approval.
-
-
-User prompt
-Given the customer's ultimate needs and requirements, respond to all inquiries and questions.
