@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <AppMenu xmlns="http://soap.sforce.com/2006/04/metadata">
     <appMenuItems>
+        <name>rooms__AI_Assistant</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>rooms__iDialogueAdmin_Lightning</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>flowgpt__Flow_GPT</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>standard__Platform</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -85,14 +97,6 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>rooms__AI_Assistant</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>rooms__iDialogueAdmin_Lightning</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>rooms__iDialogue_Configurators</name>
         <type>CustomApplication</type>
     </appMenuItems>
@@ -103,9 +107,5 @@
     <appMenuItems>
         <name>iDialogue</name>
         <type>ConnectedApp</type>
-    </appMenuItems>
-    <appMenuItems>
-        <name>flowgpt__Flow_GPT</name>
-        <type>CustomApplication</type>
     </appMenuItems>
 </AppMenu>

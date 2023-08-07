@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Describe_Account_Fields</name>
+        <label>Describe Account Fields</label>
+        <locationX>918</locationX>
+        <locationY>196</locationY>
+        <actionName>rooms__AIPromptSObjectUtils</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>OpportunityProductsCollection</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>extractSObjectFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreIDFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreNullFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>OpportunityRecord.AccountId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldLabel</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldName</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AIPromptSObjectUtils</nameSegment>
+        <outputParameters>
+            <assignToReference>AccountFields</assignToReference>
+            <name>output</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Describe_Contact_Fields</name>
+        <label>Describe Contact Fields</label>
+        <locationX>1139</locationX>
+        <locationY>339</locationY>
+        <actionName>rooms__AIPromptSObjectUtils</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Pricebook_Defined_Decision</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>extractSObjectFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreIDFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreNullFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>OpportunityRecord.rooms__PrimarySignerContact__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldLabel</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AIPromptSObjectUtils</nameSegment>
+        <outputParameters>
+            <assignToReference>PrimaryContactSummary</assignToReference>
+            <name>output</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Describe_Opportunity_Fields</name>
+        <label>Describe Opportunity Fields</label>
+        <locationX>783</locationX>
+        <locationY>196</locationY>
+        <actionName>rooms__AIPromptSObjectUtils</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Describe_Account_Fields</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>extractSObjectFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreIDFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreNullFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldLabel</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldName</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AIPromptSObjectUtils</nameSegment>
+        <outputParameters>
+            <assignToReference>OpportunityFields</assignToReference>
+            <name>output</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Describe_Opportunity_Line_Items</name>
+        <label>Describe Opportunity Line Items</label>
+        <locationX>1284</locationX>
+        <locationY>196</locationY>
+        <actionName>rooms__AIPromptSObjectUtils</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Primary_Contact_Defined</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>describeRelatedRecords</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>extractSObjectFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreIDFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreNullFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObject</name>
+            <value>
+                <stringValue>OpportunityLineItem</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObjectField</name>
+            <value>
+                <stringValue>OpportunityId</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldLabel</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldName</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AIPromptSObjectUtils</nameSegment>
+        <outputParameters>
+            <assignToReference>LineItemSummary</assignToReference>
+            <name>output</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Describe_Pricebook_Entries</name>
+        <label>Describe Pricebook Entries</label>
+        <locationX>1033</locationX>
+        <locationY>608</locationY>
+        <actionName>rooms__AIPromptSObjectUtils</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Assign_System_Prompt_Output</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>describeRelatedRecords</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>extractSObjectFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreIDFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreNullFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>OpportunityRecord.Pricebook2Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObject</name>
+            <value>
+                <stringValue>PricebookEntry</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObjectField</name>
+            <value>
+                <stringValue>Pricebook2Id</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AIPromptSObjectUtils</nameSegment>
+        <outputParameters>
+            <assignToReference>PricebookSummary</assignToReference>
+            <name>output</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>Assign_Product_Count</name>
+        <label>Assign Product Count</label>
+        <locationX>1168</locationX>
+        <locationY>196</locationY>
+        <assignmentItems>
+            <assignToReference>ProductCount</assignToReference>
+            <operator>AssignCount</operator>
+            <value>
+                <elementReference>OpportunityProductsCollection</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Describe_Opportunity_Line_Items</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_System_Prompt_Output</name>
+        <label>Assign System Prompt Output</label>
+        <locationX>1192</locationX>
+        <locationY>677</locationY>
+        <assignmentItems>
+            <assignToReference>systemPrompt</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SystemPromptTemplate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <name>Pricebook_Defined_Decision</name>
+        <label>Pricebook Defined?</label>
+        <locationX>1276</locationX>
+        <locationY>546</locationY>
+        <defaultConnector>
+            <targetReference>Assign_System_Prompt_Output</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>YesPricebookDefined</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OpportunityRecord.Pricebook2Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Describe_Pricebook_Entries</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Primary_Contact_Defined</name>
+        <label>Primary Contact Defined?</label>
+        <locationX>1276</locationX>
+        <locationY>341</locationY>
+        <defaultConnector>
+            <targetReference>Pricebook_Defined_Decision</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>YesContactDefined</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>OpportunityRecord.rooms__PrimarySignerContact__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Describe_Contact_Fields</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>AI Opportunity System Prompt {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AI Opportunity Quote Bot System Prompt</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>AccountRecord</name>
+        <label>Get Account</label>
+        <locationX>696</locationX>
+        <locationY>365</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Describe_Opportunity_Fields</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>OpportunityRecord.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Type</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>OpportunityProductsCollection</name>
+        <label>Get Opportunity Products</label>
+        <locationX>1053</locationX>
+        <locationY>196</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Product_Count</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>OpportunityRecord</name>
+        <label>Get Opportunity</label>
+        <locationX>653</locationX>
+        <locationY>196</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>AccountRecord</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>AccountId</queriedFields>
+        <queriedFields>rooms__PrimarySignerContact__c</queriedFields>
+        <queriedFields>Pricebook2Id</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>527</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>OpportunityRecord</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>ApprovalRules</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text># Approval Rules
+If any add-on SLA or Installation products are missing, then &quot;Yes&quot; the quote requires approval.
+If any product discount is greater than 15%, then &quot;Yes&quot; the quote requires approval.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>DiscountRules</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text># Discounts
+Accounts of type “Platinum” receive an additional 5% discount on all products.
+
+If the opportunity type is &quot;Existing Customer - Upgrade&quot; then they are entitled to an additional 10% discount on any GenWatt Diesel or GenWatt Gasoline products.
+
+Existing customers are entitled to a 15% discount on any GenWatt Propane products.
+
+Customer Accounts with a Rating of &quot;Hot&quot; are entitled to an additional discount of 5% on all products.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>InstallationProducts</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text># Installation Services
+If the customer&apos;s objective is an industrial use case, then one of the 3 following products must be included in the quote:
+* Installation: Industrial - Low
+* Installation: Industrial - Medium
+* Installation: Industrial - High</text>
+    </textTemplates>
+    <textTemplates>
+        <name>ProductRules</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text># Product Rules
+Duplicate products should not exist in the quote. If 2 line items have the same ProductCode, then the quote require approval.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>QuoteRules</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text># Quote Rules
+The following rules apply to the configuration, bundling, pricing, discounting and approving of products on a Sales Opportunity. The ultimate objective is to generate a sales quote for a prospective customer that is correct and without errors. The quoted configuration must solve the customers needs.
+
+The user is a Sales Representation or Solution Engineer tasked with aligning the customers objectives with a solution comprised of one or many line item products.
+The user will ask questions about applicable discounts or product bundling rules. The user is referring to the Current Quote, and requires responses that are applicable to the current quote. The user is generally not submitting generic questions about the rules, but instead wants to know how these rules apply to the current quote and products.
+
+A quote is comprised of many line items.
+Each line item is comprised of a Name, Description, ProductCode, Quantity, Sales Price (aka Unit Price), Discount and TotalPrice.
+
+Total price is the product of Quantity * Sales price. Then discount percentage or amount is applied.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SalesMethodology</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>GenWatt implements the &quot;N.E.A.T Selling System&quot;. Developed by The Harris Consulting Group and Sales Hacker, this qualification framework was designed to replace standbys like BANT (budget, authority, need, and timeline) and ANUM (authority, need, urgency, and money).
+
+The “N” in N.E.A.T. stands for core needs. Rather than focusing on surface-level pain, this methodology&apos;s creators urge salespeople to go deeply into their prospect’s challenges. How will this product matter to them both as an individual and within the context of the organization?
+
+“E” represents economic impact. Don’t simply present your solution’s ROI — help the buyer understand the financial impact they’re currently on track to realize versus the impact they’ll see if they make a change.
+
+“A” is access to authority. You probably won’t get to speak with the CFO, but can your champion talk to the CFO on your behalf? And more importantly, will they?
+
+“T,” or Timeline, refers to the exciting event forcing your prospect to make a decision. If there aren’t negative consequences to missing this date, it’s not a real deadline.
+When a Sales Representative asks for guidance or advise on this quote, refer to the N.E.A.T. principles.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SLAProducts</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text># Service Level Agreements (SLA)
+Certain products must include an additional service level agreement (SLA) product with the quote.
+If the quote type = &quot;New Customer&quot;, then at least one &quot;SLA&quot; (Service Level Agreement) product must be included in the quote.
+If a &quot;New Customer&quot; is purchasing a product with product code = GC1060, then the SLA must be of type &quot;SLA: Platinum&quot;.
+&quot;SLA: Bronze&quot; products are not supported for customer Accounts in the state of Alaska (or state AL).</text>
+    </textTemplates>
+    <textTemplates>
+        <name>SystemPromptTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Act as an expert Sales Coach for GenWatt Generators, a company specializing in diesel, gasoline and propane generators. 
+You are supporting a Sales Representative with a Sales Opportunity (aka Quote) for Customer Account {!AccountRecord.Name}.
+
+{!QuoteRules}
+{!DiscountRules}
+{!SLAProducts}
+{!InstallationProducts}
+{!ProductRules}
+{!ApprovalRules}
+
+Details of the Customer Account
+{!AccountFields}
+
+Current Quote Details:
+{!OpportunityFields}
+
+The current quote has {!ProductCount} Products. Details about the products:
+{!LineItemSummary}
+
+Customer Primary Contact: 
+{!PrimaryContactSummary}
+
+The following products are NOT included in the quote, and not considered part of any approval rules. They are for reference only and should be considered as a &quot;Pricebook&quot; of available products for sale.
+{!PricebookSummary}
+
+You are helpful and polite. Responses must be professional, succinct, logical and defensible.
+{!SalesMethodology}
+
+If you cannot reliably answer a question with confidence, then respond with &quot;I don&apos;t know&quot;. Be concise in all responses.
+Any letter, email or document generation requests should be personalized &quot;TO&quot; the primary contact and &quot;FROM&quot; the current user.</text>
+    </textTemplates>
+    <variables>
+        <name>AccountFields</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>dialogueId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>LineItemSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>modelId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>OpportunityFields</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>PricebookSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>PrimaryContactSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ProductCount</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ProductSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>systemPrompt</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>userPrompt</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

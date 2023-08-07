@@ -228,6 +228,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -291,6 +295,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -450,6 +455,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -513,6 +522,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -676,6 +686,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -740,6 +754,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -899,6 +914,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -962,6 +981,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -1125,6 +1145,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -1189,6 +1213,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -1348,6 +1373,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -1411,6 +1440,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -1574,6 +1604,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -1638,6 +1672,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -1797,6 +1832,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -1860,6 +1899,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -2023,6 +2063,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -2087,6 +2131,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -2246,6 +2291,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -2309,6 +2358,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -2472,6 +2522,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -2536,6 +2590,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>
@@ -2695,6 +2750,10 @@
             <label>Current Generator(s)</label>
         </opportunityListFieldsLabelMappings>
         <opportunityListFieldsLabelMappings>
+            <field>00NDp00000BxzOY</field>
+            <label>Customer Objective</label>
+        </opportunityListFieldsLabelMappings>
+        <opportunityListFieldsLabelMappings>
             <field>00NDp00000BvjTt</field>
             <label>Delivery/Installation Status</label>
         </opportunityListFieldsLabelMappings>
@@ -2758,6 +2817,7 @@
             <field>OPPORTUNITY.LAST_UPDATE</field>
             <field>00NDp00000782SW</field>
             <field>00NDp00000BvjTs</field>
+            <field>00NDp00000BxzOY</field>
             <field>00NDp00000BvjTt</field>
             <field>00NDp00000782SX</field>
             <field>00NDp00000BvjTu</field>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Summarize_Line_Items</name>
+        <label>Summarize Line Items</label>
+        <locationX>1295</locationX>
+        <locationY>67</locationY>
+        <actionName>rooms__AIPromptSObjectUtils</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Summarize_Pricebook_Entries</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>describeRelatedRecords</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>extractSObjectFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreIDFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreNullFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>OpportunityRecord.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObject</name>
+            <value>
+                <stringValue>OpportunityLineItem</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObjectField</name>
+            <value>
+                <stringValue>OpportunityId</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldLabel</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldName</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AIPromptSObjectUtils</nameSegment>
+        <outputParameters>
+            <assignToReference>LineItemSummary</assignToReference>
+            <name>output</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Summarize_Pricebook_Entries</name>
+        <label>Summarize Pricebook Entries</label>
+        <locationX>1295</locationX>
+        <locationY>223</locationY>
+        <actionName>rooms__AIPromptSObjectUtils</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Assign_System_Prompt</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>describeRelatedRecords</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>extractSObjectFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreIDFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ignoreNullFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>OpportunityRecord.Pricebook2Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObject</name>
+            <value>
+                <stringValue>PricebookEntry</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObjectField</name>
+            <value>
+                <stringValue>Pricebook2Id</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldLabel</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>useFieldName</name>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AIPromptSObjectUtils</nameSegment>
+        <outputParameters>
+            <assignToReference>PricebookSummary</assignToReference>
+            <name>output</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <apiVersion>58.0</apiVersion>
+    <assignments>
+        <name>Assign_System_Prompt</name>
+        <label>Assign System Prompt</label>
+        <locationX>1148</locationX>
+        <locationY>223</locationY>
+        <assignmentItems>
+            <assignToReference>systemPrompt</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>systemPromptTemplate</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <environments>Default</environments>
+    <interviewLabel>AI Quote Room ChatBot {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>AI Quote Room ChatBot</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>OpportunityRecord</name>
+        <label>GET Opportunity</label>
+        <locationX>1155</locationX>
+        <locationY>67</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Summarize_Line_Items</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>RoomRecord.rooms__MasterRecordId__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>RoomMemberRecord</name>
+        <label>GET Room Member</label>
+        <locationX>1017</locationX>
+        <locationY>67</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>OpportunityRecord</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>memberId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>rooms__DocumentRoomMember__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>RoomRecord</name>
+        <label>GET Room</label>
+        <locationX>889</locationX>
+        <locationY>67</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>RoomMemberRecord</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>roomId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>rooms__DocumentRoom__c</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>rooms__MasterRecordId__c</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>534</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>RoomRecord</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>SupportFAQ</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>The following are frequently asked questions (FAQ) about GenWatt generators and services. Use these answers in response to user questions, when relevant.
+Each question is prefixed with a &quot;Q:&quot;.
+Each answer is prefixed with a &quot;A:&quot;.
+
+Q: Where is the generator made?
+A: GenWatt generators are designed and manufactured by GenWatt Systems Inc. at our facilities in Wisconsin.
+
+Q: How do the GenWatt Diesel and Gasoline generators compare to air cooled engines used in other brands
+of generators?
+A: Unlike other engines used in backup power generation, GenWatt engines are designed specifically for generators. They are engineered to run for the long periods of time required during a severe power outage or on a job site. They utilize the same type of pressurized oil lubrication used to give automobile engines long and trouble-free lives.
+
+Q: What type of oil is recommended? How often should it be changed?
+A: Above 32°F, use SAE 30. Below 40°F and down to -10°F, use 10W-30. Synthetic 5W-30 can be used
+in all temperatures. Oil should be changed after the first 20-30 hours of operation and every 100
+hours of run time thereafter.
+
+Q: What type of gasoline is recommended for my generator?
+A: Use clean, fresh unleaded gasoline with a minimum 87 octane rating.
+
+Q: How often should I perform routine maintenance on my portable generator?
+A: All generators require periodic maintenance, such as oil and filter changes, to ensure maximum performance for years of reliable service. Refer to the owner&apos;s manual for routine maintenance procedures and schedules.
+
+Q: Does the portable generator need to be grounded?
+A: It depends on the application.
+When using just the extension cords, you do not need to use a ground rod. (If you have a bonded neutral portable generator. This can be found in the owner&apos;s manual.)
+
+When connecting to an electrical panel (building electrical system, manual transfer switch, RV, etc.) you need to connect your generator to a ground rod.
+
+Ground rods must be pounded into the earth, then connected to the ground lug on the generator via a ground cable. The rod must be at least 8ft into the earth.
+
+We strongly recommend that you check and adhere to all applicable federal, state and local regulations relating to grounding.
+
+Q: When storing my portable, at what point should the gasoline be drained?
+A: It is highly recommended that you drain the fuel from the tank and run the carburetor dry if you are planning on storing your portable for more than 30 days. It has been found that fuel begins to deteriorate within approximately one month. 
+
+In order to preserve its properties, you should add a stabilizer to it right from the start. The stabilizer will neutralize the damaging effect that ethanol has on the components which are responsible for combustion. Be sure to carefully follow the fuel stabilizer&apos;s ratio instructions, and noting the duration that the fuel stabilizer is effective for.
+
+Q: Can I vent the exhaust from my portable generator out of an enclosed area? Where should I set my portable?
+A: No. Never run the generator indoors, in a garage or in an enclosed area. Portable generators are designed to run outside where there is plenty of ventilation. You need to position your portable away from doors and windows so that the exhaust fumes do not get inside the house. The produced carbon monoxide gas can cause serious poisoning. You should also be sure to set your portable where it will be protected from moisture, rain and snow.
+
+Q: Can a portable generator be used during inclement weather?
+A: NEVER run a generator directly in the rain, snow or other wet conditions. NEVER run a generator indoors or in a garage.
+
+Q: Where can I purchase parts for my portable generator?
+A: Parts can be purchased through any Authorized Generac Dealer. See our Dealer Locator to find a dealer near you. You can buy parts online or call (877) 500-7499. Part numbers are located in the owner’s manual.
+
+Q: Where do I go to have warranty repairs performed on my portable generator?
+A: Any Authorized Generac dealer can perform warranty service. To find your local authorized Generac Dealer, see our locator or contact us for additional information. Our Authorized Service Centers provide parts, service and information on Generac equipment, regardless of where it was purchased. Authorized Service Centers are staffed with trained technicians supporting all aspects of the Generac portable generator line.
+
+Q: Why does my portable generator keep shutting down?
+A: How many loads are plugged into the generator? Overloading a generator in excess of its wattage capacity can result in damage to the generator and to the connected electrical devices. Try unplugging loads and running the generator with less applied. 
+
+Is the fuel shut-off valve turned on?
+Without the fuel valve turned completely on, gas cannot get to the engine for proper function. If the fuel valve is on, check the fuel filter and fuel line for clogs. Clogged fuel lines may be restricting the amount of fuel getting to the engine. Is the oil full? Oil capacity is documented in the owner’s manual. If recommended amount is added and it still does not reach the threads on the crankcase, add enough oil to reach the bottom of the threads even if it’s more than the manual recommends. Generac generators are equipped with a low-oil shut down system to protect the engine from low oil damage.
+
+Q: My portable generator is running but will not provide power.
+A: Are all the breakers in the on position? Each receptacle is provided with a push-to-reset circuit breaker to protect the generator against overload. If the breakers are all on, try field flashing the generator. Generators in storage can lose their magnetism and not produce electricity even though the engine is running. If the breakers are not tripped and field flashing did work, the brushes in a brushed alternator may need to be replaced. It is best for the device to be checked by a Generac Service Dealer who will diagnose the problem and provide resolution.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>systemPromptTemplate</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>You are a helpful Sales support assistant. You are helping a customer with a Sales Quote. The customer is interested in purchasing products from GenWatt Generators.
+
+Customer information:
+First Name = {!RoomMemberRecord.rooms__FirstName__c}
+Last Name = {!RoomMemberRecord.rooms__LastName__c}
+Email Address = {!RoomMemberRecord.rooms__Email__c}
+
+Sales Quote information:
+Name = {!OpportunityRecord.Name}
+Description = {!OpportunityRecord.Description}
+Created Date: {!OpportunityRecord.CreatedDate}
+Total Amount: {!OpportunityRecord.Amount}
+Type = {!OpportunityRecord.Type}
+
+Product Line Items in the Quote:
+{!LineItemSummary}
+
+The following products are not included in the sales quote. However, the customer may have questions about adding additional products to the quote, or prices of other products. Respond to inquiries about other products using the following information:
+{!PricebookSummary}
+
+All responses are correct, factual, defensible and concise.</text>
+    </textTemplates>
+    <variables>
+        <name>LineItemSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>memberId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>PricebookSummary</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>roomId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>systemPrompt</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

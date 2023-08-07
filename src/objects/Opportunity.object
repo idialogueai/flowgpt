@@ -187,6 +187,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>Customer_Objective__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Objective</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>DeliveryInstallationStatus__c</fullName>
         <externalId>false</externalId>
         <label>Delivery/Installation Status</label>

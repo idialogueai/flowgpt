@@ -18,6 +18,12 @@
             </value>
         </inputParameters>
         <inputParameters>
+            <name>ignoreIDFields</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
             <name>ignoreNullFields</name>
             <value>
                 <booleanValue>true</booleanValue>
@@ -131,8 +137,8 @@
     <assignments>
         <name>Assign_SObject_Text</name>
         <label>Assign SObject Text</label>
-        <locationX>1118</locationX>
-        <locationY>117</locationY>
+        <locationX>1119</locationX>
+        <locationY>116</locationY>
         <assignmentItems>
             <assignToReference>OriginalText</assignToReference>
             <operator>Assign</operator>
