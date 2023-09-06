@@ -44,6 +44,7 @@
     <description>Invokes an iDialogue batch that uses GPT to summarize Accounts.</description>
     <environments>Default</environments>
     <interviewLabel>AI Scheduled Account Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>AI Scheduled Account Update</label>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -100,5 +101,5 @@ The batch invokes the AI_Account_Summary flow.</description>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
 </Flow>

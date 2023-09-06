@@ -160,6 +160,7 @@
     </assignments>
     <environments>Default</environments>
     <interviewLabel>AI Quote Room ChatBot {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>AI Quote Room ChatBot</label>
     <processMetadataValues>
         <name>BuilderType</name>

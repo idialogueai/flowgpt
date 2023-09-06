@@ -17,6 +17,7 @@
     <description>Initializes room chat bot with system prompt context.</description>
     <environments>Default</environments>
     <interviewLabel>AI {!$Flow.CurrentDateTime}</interviewLabel>
+    <isTemplate>true</isTemplate>
     <label>AI Case Room ChatBot</label>
     <processMetadataValues>
         <name>BuilderType</name>
