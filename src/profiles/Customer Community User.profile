@@ -608,6 +608,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Contact.rooms__PortalAccessEnabled__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.rooms__PortalLastLoginDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.rooms__PortalLoginUsername__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.rooms__PortalRegistrationDate__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Contact.rooms__StripeCustomerID__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -714,6 +734,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>ContentVersion.rooms__InWorkspace__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>ContentVersion.rooms__IsAIFile__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1384,6 +1409,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>AI_Scheduled_Account_Update</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Campaign_Content_Generator</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>

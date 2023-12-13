@@ -51,6 +51,7 @@
         <fields>GroupKey</fields>
         <fields>SubGroupKey</fields>
         <fields>IsEnabled</fields>
+        <fields>DscnModelNoteExportStatus</fields>
         <fields>Rank</fields>
         <fields>StartDateTime</fields>
         <fields>EndDateTime</fields>

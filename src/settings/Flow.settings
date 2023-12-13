@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FlowSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+<FlowSettings xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <canDebugFlowAsAnotherUser>false</canDebugFlowAsAnotherUser>
     <doesEnforceApexCpuTimeLimit>true</doesEnforceApexCpuTimeLimit>
     <doesFormulaEnforceDataAccess>false</doesFormulaEnforceDataAccess>
@@ -17,12 +17,12 @@
     <enableFlowUseApexExceptionEmail>false</enableFlowUseApexExceptionEmail>
     <enableFlowViaRestUsesUserCtxt>false</enableFlowViaRestUsesUserCtxt>
     <enableLightningRuntimeEnabled>true</enableLightningRuntimeEnabled>
-    <isAccessToInvokedApexRequired>false</isAccessToInvokedApexRequired>
+    <isAccessToInvokedApexRequired xsi:nil="true"/>
     <isApexPluginAccessModifierRespected>true</isApexPluginAccessModifierRespected>
     <isEnhancedFlowListViewVisible>true</isEnhancedFlowListViewVisible>
-    <isFlowApexContextRetired>true</isFlowApexContextRetired>
+    <isFlowApexContextRetired xsi:nil="true"/>
     <isFlowBlockAccessToSessionIDEnabled>true</isFlowBlockAccessToSessionIDEnabled>
     <isManageFlowRequiredForAutomationCharts>false</isManageFlowRequiredForAutomationCharts>
     <isSupportRollbackOnErrorForApexInvocableActionsEnabled>false</isSupportRollbackOnErrorForApexInvocableActionsEnabled>
-    <isTimeResumedInSameRunContext>true</isTimeResumedInSameRunContext>
+    <isTimeResumedInSameRunContext xsi:nil="true"/>
 </FlowSettings>

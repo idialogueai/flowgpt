@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ApexSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+<ApexSettings xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <enableAggregateCodeCoverageOnly>false</enableAggregateCodeCoverageOnly>
     <enableApexAccessRightsPref>false</enableApexAccessRightsPref>
     <enableApexApprovalLockUnlock>false</enableApexApprovalLockUnlock>
@@ -9,7 +9,7 @@
     <enableAuraApexCtrlGuestUserAccessCheckPref>false</enableAuraApexCtrlGuestUserAccessCheckPref>
     <enableCompileOnDeploy>false</enableCompileOnDeploy>
     <enableDisableParallelApexTesting>false</enableDisableParallelApexTesting>
-    <enableDoNotEmailDebugLog>false</enableDoNotEmailDebugLog>
+    <enableDoNotEmailDebugLog xsi:nil="true"/>
     <enableGaplessTestAutoNum>false</enableGaplessTestAutoNum>
     <enableMngdCtrlActionAccessPref>false</enableMngdCtrlActionAccessPref>
     <enableNonCertifiedApexMdCrud>false</enableNonCertifiedApexMdCrud>

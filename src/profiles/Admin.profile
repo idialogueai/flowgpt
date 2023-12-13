@@ -608,6 +608,26 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.rooms__PortalAccessEnabled__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.rooms__PortalLastLoginDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.rooms__PortalLoginUsername__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.rooms__PortalRegistrationDate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.rooms__StripeCustomerID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -714,6 +734,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ContentVersion.rooms__InWorkspace__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ContentVersion.rooms__IsAIFile__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1384,6 +1409,10 @@
     <flowAccesses>
         <enabled>false</enabled>
         <flow>AI_Scheduled_Account_Update</flow>
+    </flowAccesses>
+    <flowAccesses>
+        <enabled>false</enabled>
+        <flow>Campaign_Content_Generator</flow>
     </flowAccesses>
     <flowAccesses>
         <enabled>false</enabled>
@@ -2262,10 +2291,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageContentTypes</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageConvMiningReports</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

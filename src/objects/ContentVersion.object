@@ -319,6 +319,16 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>rooms__IsAIFile__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if the file is related to an AI Model, AI Prompt, or AI Skill.</inlineHelpText>
+        <label>Is AI Knowledge Source</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>rooms__IsArchived__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>

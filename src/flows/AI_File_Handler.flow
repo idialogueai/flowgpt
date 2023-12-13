@@ -4,26 +4,26 @@
         <name>Error_Handler_Alert</name>
         <label>Error Handler Alert</label>
         <locationX>1111</locationX>
-        <locationY>403</locationY>
+        <locationY>489</locationY>
         <actionName>emailSimple</actionName>
         <actionType>emailSimple</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>emailBody</name>
-            <value>
-                <elementReference>ErrorMessage</elementReference>
-            </value>
-        </inputParameters>
-        <inputParameters>
             <name>emailAddresses</name>
             <value>
-                <stringValue>mike@idialogue.app</stringValue>
+                <elementReference>$User.Email</elementReference>
             </value>
         </inputParameters>
         <inputParameters>
             <name>emailSubject</name>
             <value>
                 <stringValue>Error With Text Extract</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>ErrorMessage</elementReference>
             </value>
         </inputParameters>
         <nameSegment>emailSimple</nameSegment>
@@ -33,7 +33,7 @@
         <name>Generate_PII_Summary</name>
         <label>Generate PII Summary</label>
         <locationX>1402</locationX>
-        <locationY>725</locationY>
+        <locationY>811</locationY>
         <actionName>rooms__AICompletionAction</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -85,7 +85,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>GPT_Summarize_Action</name>
         <label>GPT Summarize Action</label>
         <locationX>985</locationX>
-        <locationY>560</locationY>
+        <locationY>646</locationY>
         <actionName>rooms__AICompletionAction</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -135,7 +135,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>PII_Detection</name>
         <label>PII Detection</label>
         <locationX>1105</locationX>
-        <locationY>560</locationY>
+        <locationY>646</locationY>
         <actionName>rooms__AICompletionAction</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -237,7 +237,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>Start_Text_Extraction_Process</name>
         <label>Start Text Extraction Process</label>
         <locationX>987</locationX>
-        <locationY>234</locationY>
+        <locationY>320</locationY>
         <actionName>rooms__ContentVersionAIAction</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -276,7 +276,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>Assign_PII_Detected_Flag</name>
         <label>Assign PII Detected Flag</label>
         <locationX>1234</locationX>
-        <locationY>725</locationY>
+        <locationY>811</locationY>
         <assignmentItems>
             <assignToReference>PIIDetected</assignToReference>
             <operator>Assign</operator>
@@ -292,7 +292,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>Assign_Word_Count</name>
         <label>Assign Word Count</label>
         <locationX>708</locationX>
-        <locationY>559</locationY>
+        <locationY>645</locationY>
         <assignmentItems>
             <assignToReference>WordCount</assignToReference>
             <operator>Assign</operator>
@@ -308,7 +308,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>CONTENT_VERSION_INSERT_Event</name>
         <label>CONTENT VERSION INSERT Event?</label>
         <locationX>562</locationX>
-        <locationY>234</locationY>
+        <locationY>320</locationY>
         <defaultConnector>
             <targetReference>TEXT_EXTRACT_COMPLETE_EVENT</targetReference>
         </defaultConnector>
@@ -334,7 +334,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>GPT_Summarize_File_Decision</name>
         <label>GPT Summarize File?</label>
         <locationX>829</locationX>
-        <locationY>561</locationY>
+        <locationY>647</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>YesGPTSummarize</name>
@@ -356,7 +356,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>PII_Detected_Decision</name>
         <label>PII Detected?</label>
         <locationX>1224</locationX>
-        <locationY>562</locationY>
+        <locationY>648</locationY>
         <defaultConnector>
             <targetReference>Update_Text_Extract_Complete_Timestamp</targetReference>
         </defaultConnector>
@@ -381,7 +381,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>Qualifies_for_Text_Extraction</name>
         <label>Qualifies for Text Extraction?</label>
         <locationX>839</locationX>
-        <locationY>235</locationY>
+        <locationY>321</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>YesStartExtract</name>
@@ -403,7 +403,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>TEXT_EXTRACT_COMPLETE_EVENT</name>
         <label>TEXT EXTRACT COMPLETE</label>
         <locationX>562</locationX>
-        <locationY>559</locationY>
+        <locationY>645</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>YesExtractComplete</name>
@@ -425,7 +425,7 @@ Provide the ContentVersionId as an input so the API will reference the extracted
         <name>Text_Extract_Successful</name>
         <label>Successful?</label>
         <locationX>1104</locationX>
-        <locationY>236</locationY>
+        <locationY>322</locationY>
         <defaultConnector>
             <targetReference>Error_Handler_Alert</targetReference>
         </defaultConnector>
@@ -480,7 +480,7 @@ NOT( {!ContentVersionRecord.rooms__IsTemplate__c} )</expression>
         <name>ContentVersionRecord</name>
         <label>Get Content Version</label>
         <locationX>712</locationX>
-        <locationY>233</locationY>
+        <locationY>319</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Qualifies_for_Text_Extraction</targetReference>
@@ -509,7 +509,7 @@ NOT( {!ContentVersionRecord.rooms__IsTemplate__c} )</expression>
         <name>Update_Text_Extract_Complete_Timestamp</name>
         <label>Update Text Extract Complete Timestamp</label>
         <locationX>1401</locationX>
-        <locationY>561</locationY>
+        <locationY>647</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -554,7 +554,7 @@ NOT( {!ContentVersionRecord.rooms__IsTemplate__c} )</expression>
         <name>Update_Text_Extract_Job_ID_on_Record</name>
         <label>Update Text Extract Job ID on Record</label>
         <locationX>1266</locationX>
-        <locationY>234</locationY>
+        <locationY>320</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>

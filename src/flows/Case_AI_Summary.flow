@@ -189,7 +189,7 @@
             <assignToReference>TranslationLanguage</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Spanish</stringValue>
+                <stringValue>Italian</stringValue>
             </value>
         </assignmentItems>
         <connector>

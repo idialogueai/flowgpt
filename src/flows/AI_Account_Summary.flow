@@ -3,8 +3,8 @@
     <actionCalls>
         <name>GPT_Summarize_Account</name>
         <label>GPT Summarize Account</label>
-        <locationX>802</locationX>
-        <locationY>337</locationY>
+        <locationX>1101</locationX>
+        <locationY>425</locationY>
         <actionName>rooms__AICompletionAction</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -38,12 +38,58 @@
         </outputParameters>
         <versionSegment>1</versionSegment>
     </actionCalls>
+    <actionCalls>
+        <name>Summarize_Cases</name>
+        <label>Summarize Cases</label>
+        <locationX>830</locationX>
+        <locationY>428</locationY>
+        <actionName>rooms__AIPromptSObjectUtils</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>GPT_Summarize_Account</targetReference>
+        </connector>
+        <dataTypeMappings>
+            <typeName>T__record</typeName>
+            <typeValue>Case</typeValue>
+        </dataTypeMappings>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>describeRelatedRecords</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recordId</name>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObject</name>
+            <value>
+                <stringValue>Case</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>relatedSObjectField</name>
+            <value>
+                <stringValue>AccountId</stringValue>
+            </value>
+        </inputParameters>
+        <nameSegment>rooms__AIPromptSObjectUtils</nameSegment>
+        <outputParameters>
+            <assignToReference>CaseHistory</assignToReference>
+            <name>output</name>
+        </outputParameters>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
     <apiVersion>57.0</apiVersion>
     <decisions>
         <name>Requires_AI_Summary</name>
         <label>Requires AI Summary?</label>
         <locationX>641</locationX>
-        <locationY>338</locationY>
+        <locationY>426</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>YesRequiresSummary</name>
@@ -55,17 +101,14 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>GPT_Summarize_Account</targetReference>
-            </connector>
             <label>Yes</label>
         </rules>
     </decisions>
     <decisions>
         <name>Success_Outcome</name>
         <label>Success?</label>
-        <locationX>910</locationX>
-        <locationY>339</locationY>
+        <locationX>1209</locationX>
+        <locationY>427</locationY>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
             <name>YesSuccess</name>
@@ -110,11 +153,11 @@
     <recordLookups>
         <name>AccountRecord</name>
         <label>Get Account Record</label>
-        <locationX>649</locationX>
-        <locationY>183</locationY>
+        <locationX>660</locationX>
+        <locationY>221</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Requires_AI_Summary</targetReference>
+            <targetReference>Summarize_Cases</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -131,8 +174,8 @@
     <recordUpdates>
         <name>Update_Account</name>
         <label>Update Account</label>
-        <locationX>1058</locationX>
-        <locationY>338</locationY>
+        <locationX>1357</locationX>
+        <locationY>425</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -156,7 +199,7 @@
             <targetReference>AccountRecord</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>SystemPrompt</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
@@ -176,10 +219,20 @@ Billing Address =
 {!AccountRecord.BillingStreet}
 {!AccountRecord.BillingCity} {!AccountRecord.BillingState}
 {!AccountRecord.BillingPostalCode}
-{!AccountRecord.BillingCountry}</text>
+{!AccountRecord.BillingCountry}
+
+Here is the Case History:
+{!CaseHistory}</text>
     </textTemplates>
     <variables>
         <name>AIResponse</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CaseHistory</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

@@ -522,6 +522,48 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>rooms__PortalAccessEnabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>May be overridden by individual room member links. This controls access only to portal registration and login pages.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Determines if contact is authorized to register and login to iDialogue portal applications.</inlineHelpText>
+        <label>Portal Access Enabled</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>rooms__PortalLastLoginDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The date time when contact last successfully authenticated into portal using their username and password.</inlineHelpText>
+        <label>Portal Last Login</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>rooms__PortalLoginUsername__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Portal Login Username</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>rooms__PortalRegistrationDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date timestamp when contact registered through an iDialogue portal.</inlineHelpText>
+        <label>Portal Registration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
         <fullName>rooms__StripeCustomerID__c</fullName>
         <caseSensitive>false</caseSensitive>
         <deprecated>false</deprecated>
