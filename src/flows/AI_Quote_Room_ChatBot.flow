@@ -10,6 +10,10 @@
         <connector>
             <targetReference>Summarize_Pricebook_Entries</targetReference>
         </connector>
+        <dataTypeMappings>
+            <typeName>T__record</typeName>
+            <typeValue>OpportunityLineItem</typeValue>
+        </dataTypeMappings>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>describeRelatedRecords</name>
@@ -82,6 +86,10 @@
         <connector>
             <targetReference>Assign_System_Prompt</targetReference>
         </connector>
+        <dataTypeMappings>
+            <typeName>T__record</typeName>
+            <typeValue>OpportunityLineItem</typeValue>
+        </dataTypeMappings>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>describeRelatedRecords</name>
@@ -256,6 +264,353 @@
     </start>
     <status>Active</status>
     <textTemplates>
+        <name>ProductKnowledge</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>PAGE 1
+AirLink RV55 Datasheet
+SIERRA
+WIRELESS
+WITHRA
+AirLink® RV55 Rugged LTE-A Pro Router
+BENEFITS
+Compact, Industrial Grade, Low Power LTE-
+Centrally managed, secure
+Advanced Connectivity
+LTE broadband connectivity
+for both remote fixed or
+The AirLink® RV55 is the industry&apos;s most rugged, compact, LTE-Advanced Pro
+vehicle applications in harsh
+router. Simple to install, and easy to manage, the RV55 router is designed for
+environments
+connecting critical remote assets, infrastructure, and vehicle fleets. The RV55
+Ultra-Low Power consumption,
+is especially well suited for applications in energy, utilities, smart city and public
+ideal for solar or battery powered
+safety. The RV55 provides real-time remote connectivity for SCADA, distribution
+installations.
+management systems and metering.
+Connect your field workers and
+The RV55 high-performance LTE-Advanced Pro connectivity, Wi-Fi and GNSS and
+devices with flexible dual Wi-Fi,
+location-based applications and dual connectivity for vehicle fleets and mobile
+and ethernet
+workforce. An LTE-M/NB-IoT variant is perfectly suited for hard to reach conditions.
+Reduces complexity in
+The RV55 supports an extensive range of LTE bands worldwide, and its LTE-
+connecting legacy equipment
+Advanced Pro capabilities deliver up to 600 Mbps downlink speeds. The RV55 also
+with dual-serial, ethernet, and
+supports new unlicensed LTE bands (eg. CBRS) to support dedicated Private LTE
+multi-protocol support
+service.
+Powerful remote cloud-based
+or on-premises management
+FIXED
+solutions
+Proven reliability and over 3
+million AirLink routers and
+Public or Private
+Cap Bank
+Legacy
+Recloser
+Cellular WAN
+Controller
+gateways deployed
+Equipment
+(Serial)
+Enterprise
+(Serial)
+(Ethernet)
+Peace of mind - included 3-year
+warranty, direct 24/7 support,
+MOBILE
+Wi-Fi WAN
+and device management access1
+Advanced
+Network
+Laptop
+Bucket Sensor
+Tablet
+Management
+GNSS
+(Ethernet)
+(I/O)
+(Wi-Fi)
+1 1st year of 24/7 Direct Technical Support and device management access included in purchase at no additional charge.
+sierrawireless.com/RV55
+PAGE 2
+AirLink® RV55
+Rugged LTE-A Pro Router
+RV55
+North America
+Global
+Global
+LTE-A Pro
+LTE-M/ NB-IoT
+LTE CATEGORY
+Cat 12
+Cat M1/NB1
+Peak D/L
+(Up to 600 Mbps DL)
+Cat-M1: 300kbps
+Cat-NB1: 27kbps
+Peak U/L
+(Up to 150 Mbps UL)
+Cat-M1: 375kbps
+Cat-NB1: 65kbps
+4G LTE
+2100(B1), 1900(B2), 1800(B3), AWS(B4), 850(B5),
+2100(B1), 1900(B2), 1800(B3), AWS(B4), 850(B5),
+2100(B1), 1900(B2), 1800(B3), AWS(B4),
+Frequency Bands
+2600(B7), 900(B8), 1800(B9), 700(B12), 700(B13),
+2600(B7), 900(B8), 1800(B9), 700(B12), 700(B13),
+850(B5), 900(B8), 700(B12), 700(B13), 700(B17),
+700(B14), 850(B18), 850(B19), 800(B20),
+850(B18), 850(B19), 800(B20), 850(B26),
+850 (B18), 850(B19), 800(B20), 850(B26),700(B28)
+850(B26), 700(B29), 2300(B30), 1500(B32), TDD
+700(B28), 700(B29), 2300(B30), 1500(B32), TDD
+B41, TDD B42, TDD B43, TDD B46, CBRS B48,
+B41, TDD B42, TDD B43, TDD B46, CBRS B48,
+1700(B66)
+1700(B66)
+3G HSPA/HSPA+
+2100(B1), 1900(B2), AWS(B4), 850(B5), 800(B6),
+2100(B1), 1900(B2), AWS(B4), 850(B5), 800(B6),
+Frequency Bands*
+900(B8), 1700(B9), 850(B19)
+900(B8), 1700(B9), 850(B19)
+2G EDGE/GSM/GPRS
+Frequency Bands
+850, 900, 1800, 1900
+APPROVALS
+Regulatory
+FCC, IC, PTCRB
+GCF, CE, RCM
+FCC, IC, PTCRB, GCF, CE, RCM
+Carrier
+Verizon, AT&amp;T
+Planned: Telstra
+Planned: Verizon, AT&amp;T
+PART NUMBER
+1104303
+1104332
+1104333
+Regulatory
+1104302 (Wi-Fi)
+1104331 (Wi-Fi)
+Specification
+Specification
+HOST INTERFACES
+10/100/1000 Ethernet (RJ45)
+SATELLITE NAVIGATION
+30 Channel GPS and GLONASS Receiver
+RS-232 serial port (DB-9)
+(GNSS)
+Acquisition Time: 1 S Hot Start
+USB 2.0 Micro-B Connector
+Accuracy: &lt;2 m (50%), &lt;5 m (90%), &lt;0.2 m/s
+3 SMA antenna (cellular, diversity, Active GNSS)
+Tracking Sensitivity: 160 dBm
+2 RP-SMA antenna (1x1 Wi-Fi, Optional)
+Reports: NMEA 0183 V3.0, TAIP, RAP, XORA
+LTE-M/NB-IoT: 1 SMA (cellular) only, no GNSS or Wi-Fi
+Multiple Redundant Servers
+Active GPS antenna support
+Reliable Store and Forward
+WI-FI (Optional)
+Dual Band 2.4/5GHz Wi-Fi
+SECURITY
+Remote Authentication (LDAP, RADIUS, TACACS+, DMZ)
+Dual Radio, 802.11 b/g/n/ac (Wave2 Client Mode)
+Inbound and Outbound Port filtering
+Support for 10 clients, WPA2 Enterprise per radio
+Inbound and Outbound Trusted IP
+Output power 16dBm
+MAC Address Filtering
+Configurable as Dual Band Access Point (AP) or AP+Client
+PCI compatible
+Mode
+Secure Firmware Update
+Single SSID Support per radio
+NETWORK
+Secure mobile network &amp; asset management application
+Captive Portal
+MANAGEMENT
+available in the cloud or licensed platform in the enterprise
+data center
+INPUT/OUTPUT
+Configurable I/O pin on power connector
+Fleet wide firmware upgrade delivery
+Digital Input ON Voltage: 2.7 to 36 VDC
+Router configuration and template management
+Configurable Pull-up for dry contact input
+Router staging over the air and local Ethernet connection
+Digital Open Collector Output &gt; sinking 500 mA
+Analog Input: 0.5-36 VDC
+Over-the-air software and radio module firmware updates
+Device Configuration Templates
+LAN (ETHERNET/USB)
+DHCP Server
+Configurable monitoring and alerting
+IP Passthrough
+Remote provisioning and airtime activation (where
+VLAN
+applicable)
+Host Interface Watchdog
+ROUTER MANAGEMENT
+ALMS
+PPPoE
+Local web user interface
+SERIAL
+TCP/UDP PAD Mode
+AT Command Line Interface (Telnet/SSH/Serial)
+Modbus (ASCII, RTU, Variable)
+SMS Commands
+PPP
+SNMP
+DNP3 Interoperability
+EVENTS ENGINE
+Custom event triggers and reports
+Dual Serial option (with an accessory)
+Configurable interface, no programming
+NETWORK AND ROUTING
+Network Address Translation (NAT)
+Event Types: Digital Input, Network Parameters, Data Usage,
+Port Forwarding
+Timer, Power, Device Temperature and Voltage
+Policy Routing
+Report Types: RAP, SMS, Email, SNMP Trap, TCP (Binary,
+NEMO/DMNR
+XML, CSV)
+VRRP
+Event Actions: Drive Relay Output
+Reliable Static Route
+Dynamic DNS
+Verizon PNTM
+SIERRA
+IPV6 Gateway
+WIRELESS
+PAGE 3
+AirLink® RV55
+Rugged LTE-A Pro Router
+VPN
+IPsec, GRE, and OpenVPN Client
+ENVIRONMENTAL
+Operating Temperature: -40°C to +70°C/-40°F to +158°F
+Up to 5 concurrent tunnels
+Operating Temperature (Wi-Fi variant): +70°C/
+-22°F to +158°F
+Split Tunnel
+Storage Temperature: -40°C to +85°C/-40°F to +185°F
+Dead Peer Detection (DPD)
+Humidity:95%RH@60°C
+FIPS 140-2 compatible
+Military Spec MIL-STD-810G conformance to shock,
+APPLICATION
+ALEOS Application Framework (AAF)
+vibration, thermal shock, and humidity
+FRAMEWORK
+LUA Scripting Language
+IP64 rated ingress protection
+POWER
+Input Voltage: 7 to 36 VDC
+INDUSTRY
+Safety: IECEE Certification Bodies Scheme (CB Scheme),
+LTE Idle Power: 900mW (75 mA @ 12VDC)
+CERTIFICATIONS
+UL 60950
+Standby Mode Power: 53 mW (4.4 mA @ 12 VDC) triggered
+Vehicle Usage: E-Mark (UN ECE Regulation 10.04),
+on low voltage, I/O or periodic timer
+ISO7637-2, SAE J1455 (Shock &amp; Vibration)
+Low voltage disconnect to prevent battery drain
+Hazardous Environments: Class 1 Div 2
+Built-in protection against voltage transients including 5 VDC
+Environmental: RoHS, REACH, WEEE
+engine cranking and +200 VDC load dump
+SUPPORT AND
+Includes 1st Year AirLink Complete:
+Ignition Sense with time delay shutdown
+WARRANTY
+AirLink Management Service (ALMS)
+Configurable features and ports to optimize power
+Direct 24/7 Technical Support
+consumption
+3-year standard warranty; optional 2-year warranty
+extension
+DIMENSIONS
+119 mm X 33 mm X 85 mm (102 mm including wi-fi
+1-day Accelerated Hardware Replacement available through
+connectors)
+participating resellers
+4.69 in X 1.34 in X 3.35 in (3.70 in including connectors)
+ACCESSORIES
+In the Box: DC Power Cable, and Quick Start Guide
+Weight: 320 g
+2000579 AC Adapter, 12VDC
+6000659 DIN Rail Mounting Brackets
+6001110 Cellular Paddle Antenna
+6001111 Wi-Fi 2.4/5GHz Paddle Antenna
+See website for more antenna options.
+*For carrier specific band support please refer to the hardware user guide.
+DIMENSIONS
+AirLink Networking Solution - Related Products
+119 mm
+AIRLINK NETWORK MANAGEMENT SOLUTIONS
+6
+AIRLINK MANAGEMENT SERVICE (ALMS)
+33 3mm
+.....
+Secure, Cloud-based network and asset management
+Remotely deploy, configure, monitor and manage AirLink devices
+119 mm
+Carrier-grade, high availability, secure, global infrastructure
+0000
+AIRLINK MANAGER / MOBILITY MANAGER (AM/AMM)
+33 mm
+AirLink RV55
+Deployable in the enterprise data center (on-premises) or
+106 mm
+in the cloud
+Me
+Advanced, end-to-end network and asset management
+SIERRA
+for both fixed and mobile networks.
+WIRELESS
+Remote, real-time configuration, control and troubleshooting of
+27 mm
+85 mm
+AirLink devices
+AIRLINK VPN APPLIANCE
+O
+0000
+V
+AIRLINK CONNECTION MANAGER
+119 mm
+VPN appliance built from the ground up for Airlink routers &amp;
+ACM
+gateways
+VPN
+Simplify deployment and management of your VPN solution,
+extending the enterprise to the network edge for fixed and
+mobile endpoints
+Carrier agnostic - ACM doesn&apos;t require fixed and/or public IP
+Compatible with FIPS 140-2, and always-onVPN capability
+About Sierra Wireless
+Sierra Wireless (NASDAQ: SWIR) (TSX: SW) is an loT pioneer, empowering businesses and industries to transform and thrive in the connected
+economy. Customers Start with Sierra because we offer a device-to-cloud solution, comprised of embedded and networking solutions
+seamlessly integrated with our loT services. OEMs and enterprises worldwide rely on our expertise in delivering fully integrated solutions to
+reduce complexity, turn data into intelligence and get their connected products and services to market faster. Sierra Wireless has more than
+1,400 employees globally and operates R&amp;D centers in North America, Europe and Asia. For more information, visit www.sierrawireless.com.
+For more information, visit www.sierrawireless.com.
+SIERRA
+Sierra Wireless, the Sierra Wireless logo, AirPrime, and the red wave design are trademarks of Sierra Wireless Other registered trademarks that appear on this brochure are
+the property of the respective owners. © 2019 Sierra Wireless, Inc. 2019.02.01
+WIRELESS</text>
+    </textTemplates>
+    <textTemplates>
         <name>SupportFAQ</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
         <text>The following are frequently asked questions (FAQ) about GenWatt generators and services. Use these answers in response to user questions, when relevant.
@@ -339,6 +694,8 @@ Product Line Items in the Quote:
 The following products are not included in the sales quote. However, the customer may have questions about adding additional products to the quote, or prices of other products. Respond to inquiries about other products using the following information:
 {!PricebookSummary}
 
+The following is information about the AirLink product:
+{!ProductKnowledge}
 All responses are correct, factual, defensible and concise.</text>
     </textTemplates>
     <variables>

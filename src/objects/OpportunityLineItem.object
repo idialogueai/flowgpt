@@ -141,6 +141,15 @@
         <fullName>Quantity</fullName>
     </fields>
     <fields>
+        <fullName>Quote_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>PricebookEntry.Product2.Name</formula>
+        <label>Quote Description</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>ServiceDate</fullName>
     </fields>
     <fields>

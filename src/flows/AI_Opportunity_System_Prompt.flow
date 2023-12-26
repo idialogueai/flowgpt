@@ -10,6 +10,10 @@
         <connector>
             <targetReference>OpportunityProductsCollection</targetReference>
         </connector>
+        <dataTypeMappings>
+            <typeName>T__record</typeName>
+            <typeValue>Account</typeValue>
+        </dataTypeMappings>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>extractSObjectFields</name>
@@ -64,6 +68,10 @@
         <connector>
             <targetReference>Pricebook_Defined_Decision</targetReference>
         </connector>
+        <dataTypeMappings>
+            <typeName>T__record</typeName>
+            <typeValue>Contact</typeValue>
+        </dataTypeMappings>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>extractSObjectFields</name>
@@ -112,6 +120,10 @@
         <connector>
             <targetReference>Describe_Account_Fields</targetReference>
         </connector>
+        <dataTypeMappings>
+            <typeName>T__record</typeName>
+            <typeValue>Opportunity</typeValue>
+        </dataTypeMappings>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>extractSObjectFields</name>
@@ -166,6 +178,10 @@
         <connector>
             <targetReference>Primary_Contact_Defined</targetReference>
         </connector>
+        <dataTypeMappings>
+            <typeName>T__record</typeName>
+            <typeValue>OpportunityLineItem</typeValue>
+        </dataTypeMappings>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>describeRelatedRecords</name>
@@ -238,6 +254,10 @@
         <connector>
             <targetReference>Assign_System_Prompt_Output</targetReference>
         </connector>
+        <dataTypeMappings>
+            <typeName>T__record</typeName>
+            <typeValue>PricebookEntry</typeValue>
+        </dataTypeMappings>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>describeRelatedRecords</name>

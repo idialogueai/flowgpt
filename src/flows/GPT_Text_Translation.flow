@@ -10,6 +10,10 @@
         <connector>
             <targetReference>Assign_SObject_Text</targetReference>
         </connector>
+        <dataTypeMappings>
+            <typeName>T__record</typeName>
+            <typeValue>Case</typeValue>
+        </dataTypeMappings>
         <flowTransactionModel>Automatic</flowTransactionModel>
         <inputParameters>
             <name>extractSObjectFields</name>

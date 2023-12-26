@@ -199,7 +199,7 @@
             <targetReference>AccountRecord</targetReference>
         </connector>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <textTemplates>
         <name>SystemPrompt</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
